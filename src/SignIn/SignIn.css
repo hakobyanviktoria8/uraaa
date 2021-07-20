@@ -1,0 +1,41 @@
+.profile, .profile:hover, .profile:active{
+    font-size: 14px;
+    text-decoration: none;
+    width: 200px;
+}
+.profile img{
+    height: 24px;
+    width: 24px;
+}
+.signout{
+    background: linear-gradient(180deg, #FCFCFC 0%, #F2F2F2 100%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 23px;
+    width: 131px;
+    /*height: 46px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FF6600;
+}
+.signout img{
+    margin-right: 10px;
+}
+.signin{
+    /*height: 46px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.signin_img{
+    background: linear-gradient(180deg, #FCFCFC 0%, #F2F2F2 100%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 23px;
+    margin-right: 10px;
+    padding: 5px;
+}
+.signin .span{
+    border-right: 1px solid #FFA381;
+    padding-right: 16px;
+}
