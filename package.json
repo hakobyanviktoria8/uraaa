@@ -2,7 +2,7 @@
   "name": "uraaa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://hakobyanviktoria8.github.io/uraaa",
+  "homepage": "http://victoria-webmaker.github.io/uraaa",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

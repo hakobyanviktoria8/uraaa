@@ -35,7 +35,7 @@
     border: none;
     outline: none;
     box-shadow: none;
-    width:70vh !important;
+    width: 25vw !important;
 }
 
 .input-group .append .btn,
@@ -174,12 +174,12 @@
 
 @media (max-width: 1440px) {
     .navBarTop__search input {
-        width: 80vh !important;
+        width: 32vw !important;
     }
 
 }
 @media (max-width: 1024px) {
     .navBarTop__search input {
-        width: 20vh !important;
+        width: 15vw !important;
     }
 }
