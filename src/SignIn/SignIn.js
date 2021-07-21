@@ -8,8 +8,8 @@ const SignIn = ({show}) => {
 
     const handleSignin = () => {
         setSignin(!signin);
-        console.log("signin   ", signin);
     }
+
     return (
         <Link to="/signin"
               className="profile"
@@ -17,14 +17,16 @@ const SignIn = ({show}) => {
 
         >
             {signin ?
+                //if user sign in
                 <div className="signin">
-                    <div  className="signin_img">
+                    <div className="signin__img">
                         <img src={profile} alt=""/>
                     </div>
 
-                    <span className={show ? "" : "span"}>Lusine TerHayrapetyan</span>
+                    <span className={show ? "" : "signin__span"}>Lusine Hayrapetyan</span>
                 </div>
                 :
+                //user sign out
                 <div className="signout" style={{"height": show ? "46px" : "32px"}}>
                     <img src={profile} alt=""/>
                     <span>Sign In</span>

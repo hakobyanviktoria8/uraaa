@@ -1,24 +1,28 @@
+import React, {useState, useEffect} from "react";
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import NavBarTop from "./NavBar/NavBarTop";
 import NavBarBottom from "./NavBar/NavBarBottom";
-import {useState, useEffect} from "react";
 
-function App() {
+const App = () => {
     const [show, setShow] = useState(true);
 
+    const scroll_down = () => {
+        window.scrollY > 70 ? setShow(false) : setShow(true)
+    };
+
     useEffect(() => {
-        window.addEventListener("scroll", () => {
-            window.scrollY > 70 ? setShow(false) : setShow(true)
-        });
+        window.addEventListener("scroll", scroll_down);
         return () => {
-            window.removeEventListener("scroll")
+            window.removeEventListener("scroll", scroll_down)
         }
     }, []);
 
     return (
         <div className="App">
             <Router>
+                {/*if scrollY > 70px component NavBarBottom hide in bottom area and show in NavBarTop*/}
+
                 <NavBarTop show={show}/>
 
                 {
@@ -58,7 +62,7 @@ function App() {
                 </div>
             </Router>
 
-            {/*text*/}
+            {/*text example help show scrol bar*/}
             <div style={{"padding": "20px"}}>
                 <hr/>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur doloremque est facilis ipsam

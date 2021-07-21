@@ -10,24 +10,19 @@
     transition-timing-function: ease-in;
 }
 
-.navBarTop .container {
-    /*border: 1px solid;*/
-}
-
 .navBarTop .col {
     display: flex;
     align-items: center;
-    /*justify-content: space-between;*/
 }
 
-.logo {
+/*_______________logo________________*/
+.navBarTop__logo {
     margin: 0 55px;
 }
 
+/*_______________search______________*/
 .navBarTop__search {
     display: flex;
-    /*width: 60%;*/
-    /*flex: 1;*/
 }
 
 .navBarTop__search input,
@@ -63,18 +58,18 @@
     height: 100%;
 }
 
-.lang {
+/*_______________language______________*/
+.navBarTop__lang {
     display: flex;
-    /*margin: 0 70px;*/
     justify-content: center;
     align-items: center;
 }
 
-.lang__flag {
+.navBarTop__lang-flag {
     margin-right: 16px;
 }
 
-.lang span {
+.navBarTop__lang span {
     word-wrap: normal;
     font-size: 16px;
     background: none;
@@ -83,13 +78,17 @@
     color: white;
 }
 
+/*_______________navBar bottom dropdown menu______________*/
 .navBarTop__bottom {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*border-left: 1px solid #FFA381;*/
     margin-left: 16px;
     height: 32px;
+}
+
+.navBarTop__bottom .dropdown {
+    left: -5px;
 }
 
 .navBarTop__bottom-count {
@@ -99,7 +98,6 @@
     background: #FFFFFF;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
-    /*margin-left: 16px;*/
     width: 37px;
     height: 24px;
     z-index: 1;
@@ -154,6 +152,10 @@
     height: 24px;
 }
 
+.navBarTop__bottom-dropdown .dropdown-item a img {
+    margin: 0 8px;
+}
+
 .navBarTop__bottom-dropdown .dropdown-item .first-child p {
     background: #FF6600;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -164,20 +166,23 @@
     color: #FFFFFF;
 }
 
-.navBarTop__bottom-dropdown .dropdown-item a img {
-    margin: 0 8px;
+.navBarTop__bottom-dropdown .dropdown-item.active,
+.navBarTop__bottom-dropdown .dropdown-item:active {
+    color: #1e2125;
+    background-color: #e9ecef;
 }
 
-.navBarTop__bottom .dropdown {
-    left: -5px;
-}
+/*______________________Responsive design__________________________*/
 
+/*_________________max width 1440px_______________________*/
 @media (max-width: 1440px) {
     .navBarTop__search input {
         width: 32vw !important;
     }
 
 }
+
+/*_________________max width 1024px_______________________*/
 @media (max-width: 1024px) {
     .navBarTop__search input {
         width: 15vw !important;

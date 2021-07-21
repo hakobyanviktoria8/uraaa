@@ -10,7 +10,7 @@ const NavBarBottom = () => {
             <Container>
                 <Row>
                     <Col>
-                        <Link to="/price-it" className="first-child">
+                        <Link to="/price-it" className="NavBarBottom__first-child">
                             <p>22</p>
                             <img src={icn} alt=""/>
                             <span>Price It</span>
@@ -35,7 +35,7 @@ const NavBarBottom = () => {
                             <img src={icn} alt=""/>
                             <span>Notifications</span>
                         </Link>
-                        <Link to="/friends" className="last-child">
+                        <Link to="/friends" className="NavBarBottom__last-child">
                             <p>22</p>
                             <img src={icn} alt=""/>
                             <span>Friends</span>

@@ -5,7 +5,6 @@ import logo from "../images/logo.svg";
 import hamburger from "../images/hamburger.svg";
 import search from "../images/search.svg";
 import lang_flag from "../images/lang_flag.svg";
-import navBarBottomDD from "../images/navBarBottomDD.svg";
 import {Col, Container, Row} from "reactstrap";
 import {
     InputGroup,
@@ -22,40 +21,41 @@ import SignIn from "../SignIn/SignIn";
 import icn from "../images/icn.svg";
 
 const NavBarTop = ({show}) => {
+
+    //search All dropdown
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [splitButtonOpen, setSplitButtonOpen] = useState(false);
     const toggleDropDown = () => setDropdownOpen(!dropdownOpen);
-    const toggleSplit = () => setSplitButtonOpen(!splitButtonOpen);
-    const [dropdownOpen1, setDropdownOpen1] = useState(false);
-    const toggle1 = () => setDropdownOpen1(prevState => !prevState);
 
     //nav bar bottom 70px scrol down
-    const [dropdownOpen2, setDropdownOpen2] = useState(false);
-    const toggle2 = () => setDropdownOpen2(prevState => !prevState);
+    const [dropdownOpenNavBar, setDropdownOpenNavBar] = useState(false);
+    const toggleNavBar = () => setDropdownOpenNavBar(prevState => !prevState);
 
     return (
         <nav className="navBarTop" style={{"height": show ? "74px" : "54px"}}>
             <Container>
                 <Row>
                     <Col>
-                        <Link to="/categories" className="categories">
+                        {/*Nav Bar Top categories, left menu*/}
+                        <Link to="/categories" className="navBarTop__categories">
                             <img src={hamburger} alt=""/>
                         </Link>
-                        <Link to="/" className="logo">
+
+                        {/*Nav Bar Top logo, home page*/}
+                        <Link to="/" className="navBarTop__logo">
                             <img src={logo} alt=""/>
                         </Link>
+
+                        {/*Nav Bar Top search input with search `All` dropdown filter*/}
                         <div className="navBarTop__search">
                             <InputGroup>
                                 <InputGroupButtonDropdown addonType="append"
                                                           isOpen={dropdownOpen}
                                                           toggle={toggleDropDown}
                                                           className="append">
-                                    <DropdownToggle caret  style={{"height": show ? "46px" : "32px"}}>
+                                    <DropdownToggle caret style={{"height": show ? "46px" : "32px"}}>
                                         All
                                     </DropdownToggle>
                                     <DropdownMenu>
-                                        <DropdownItem>one</DropdownItem>
-                                        <DropdownItem>two</DropdownItem>
                                         <DropdownItem>one</DropdownItem>
                                         <DropdownItem>two</DropdownItem>
                                     </DropdownMenu>
@@ -69,8 +69,10 @@ const NavBarTop = ({show}) => {
                                 </InputGroupAddon>
                             </InputGroup>
                         </div>
-                        <div className="lang" style={{"margin": show ? "0 70px" : "0 45px"}}>
-                            <div className="lang__flag">
+
+                        {/*Nav Bar Top language, flag and text*/}
+                        <div className="navBarTop__lang" style={{"margin": show ? "0 70px" : "0 45px"}}>
+                            <div className="navBarTop__lang-flag">
                                 <img src={lang_flag} alt=""/>
                             </div>
                             <div hidden={!show}>
@@ -78,16 +80,16 @@ const NavBarTop = ({show}) => {
                             </div>
                         </div>
 
+                        {/*Nav Bar Top SignIn component here*/}
                         <SignIn show={show}/>
 
-
+                        {/*NavBarBottom dropdown menu after 70px scroll*/}
                         <div className="navBarTop__bottom" hidden={show}>
                             <span className="navBarTop__bottom-count">68</span>
-                            <Dropdown  isOpen={dropdownOpen2} toggle={toggle2}>
+                            <Dropdown isOpen={dropdownOpenNavBar} toggle={toggleNavBar}>
                                 <DropdownToggle caret className="navBarTop__bottom-button">{""}
-                                    {/*<img src={navBarBottomDD} alt=""/>*/}
                                 </DropdownToggle>
-                                <DropdownMenu  className="navBarTop__bottom-dropdown" right>
+                                <DropdownMenu className="navBarTop__bottom-dropdown" right>
                                     <DropdownItem>
                                         <Link to="/price-it" className="first-child">
                                             <p>22</p>
@@ -125,7 +127,7 @@ const NavBarTop = ({show}) => {
                                     </DropdownItem>
                                     <DropdownItem>
                                         <Link to="/friends" className="last-child">
-                                            <p> </p>
+                                            <p></p>
                                             <img src={icn} alt=""/>
                                             <span>Friends</span>
                                         </Link>
